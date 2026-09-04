@@ -1,41 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Contact Brittany Livezey</title>
+    <title>Redirecting...</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        window.onload = function() {
+            // Decoding the URI string right at execution forces the browser to preserve the subject line parameters
+            var mailtoString = decodeURIComponent("mailto:brittany.livezey@://gmail.com like to be a Financial Partner!");
+            window.location.href = mailtoString;
+        };
+    </script>
 </head>
-<body style="font-family: Arial, sans-serif; text-align: center; padding-top: 60px; color: #333; background-color: #f4f6f9; margin: 0;">
+<body style="font-family: Arial, sans-serif; text-align: center; padding-top: 100px; color: #666; background-color: #f9f9f9;">
 
-    <div style="max-width: 450px; margin: 0 auto; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-top: 4px solid #0066cc;">
-        <h2 style="margin-top: 0; color: #111;">Become a Financial Partner</h2>
-        <p style="font-size: 15px; color: #666; line-height: 1.5; margin-bottom: 25px;">
-            Choose your email provider below to open a pre-filled draft.
-        </p>
-        
-        <!-- Gmail Web Button -->
-        <a href="https://google.com!" 
-           target="_blank"
-           style="display: block; padding: 14px 20px; color: white; background-color: #db4437; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 16px; margin-bottom: 12px; box-shadow: 0 2px 5px rgba(219,68,55,0.3);">
-           ✉️ Open in Gmail (Web)
-        </a>
-
-        <!-- Outlook Web Button -->
-        <a href="https://live.com!" 
-           target="_blank"
-           style="display: block; padding: 14px 20px; color: white; background-color: #0078d4; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 16px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,120,212,0.3);">
-           ✉️ Open in Outlook / Hotmail (Web)
-        </a>
-
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-
-        <!-- Fallback Standard App Button -->
-        <p style="font-size: 13px; color: #888; margin-bottom: 8px;">Using Apple Mail, Windows Mail, or a phone app?</p>
-        <a href="mailto:brittany.livezey@://gmail.com!" 
-           style="display: inline-block; padding: 8px 16px; color: #0066cc; border: 1px solid #0066cc; text-decoration: none; border-radius: 4px; font-size: 14px; font-weight: bold;">
-           Try Default Mail App
-        </a>
-    </div>
+    <p style="font-size: 16px;">Opening your email application...</p>
+    
+    <!-- If the auto-redirect fails or takes too long, they can click this fallback text -->
+    <p style="font-size: 14px;">
+        If nothing happens, <a href="mailto:brittany.livezey@://gmail.com!" style="color: #0066cc; text-decoration: underline;">click here</a> to draft manually.
+    </p>
 
 </body>
 </html>
