@@ -4,22 +4,27 @@
     <title>Redirecting...</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        window.onload = function() {
-            // Decoding the URI string right at execution forces the browser to preserve the subject line parameters
-            var mailtoString = decodeURIComponent("mailto:brittany.livezey@://gmail.com like to be a Financial Partner!");
-            window.location.href = mailtoString;
-        };
-    </script>
+    
+    <!-- LAYER 1: Immediate HTML redirect. If the browser processes HTML first, it triggers this instantly -->
+    <meta http-equiv="refresh" content="0; url=mailto:brittany.livezey@://gmail.com" />
 </head>
 <body style="font-family: Arial, sans-serif; text-align: center; padding-top: 100px; color: #666; background-color: #f9f9f9;">
 
-    <p style="font-size: 16px;">Opening your email application...</p>
+    <p style="font-size: 16px; font-weight: bold;">Opening your email application...</p>
     
-    <!-- If the auto-redirect fails or takes too long, they can click this fallback text -->
-    <p style="font-size: 14px;">
-        If nothing happens, <a href="mailto:brittany.livezey@://gmail.com!" style="color: #0066cc; text-decoration: underline;">click here</a> to draft manually.
+    <!-- LAYER 2: Explicit manual backup link. If security filters block the automatic pop-up, clicking this is guaranteed to pass the fields -->
+    <p style="font-size: 14px; margin-top: 20px;">
+        If your mail app doesn't open automatically, <a id="fallbackLink" href="mailto:brittany.livezey@://gmail.com" style="color: #0066cc; text-decoration: underline; font-weight: bold;">click here to draft your email</a>.
     </p>
+
+    <!-- LAYER 3: Strict JavaScript execution. Runs as a final push if Layer 1 is ignored by the browser -->
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                window.location.href = "mailto:brittany.livezey@://gmail.com";
+            }, 50);
+        };
+    </script>
 
 </body>
 </html>
