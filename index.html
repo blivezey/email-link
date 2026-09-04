@@ -9,17 +9,20 @@
     <div style="max-width: 400px; margin: 0 auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
         <p style="font-size: 18px; margin-bottom: 20px;">Opening your email client...</p>
         
-        <!-- Backup button in case their browser has strict pop-up blocks -->
-        <a id="emailLink" href="mailto:brittany.livezey@://gmail.com!" 
-           style="display: inline-block; padding: 12px 24px; color: white; background-color: #0066cc; text-decoration: none; border-radius: 4px; font-weight: bold;">
-           Click Here if App Doesn't Open
-        </a>
+        <!-- Standard HTML Form using 'GET' forces the browser to explicitly attach the subject line -->
+        <form id="emailForm" action="mailto:brittany.livezey@gmail.com" method="GET">
+            <input type="hidden" name="subject" value="I'd like to be a Financial Partner!">
+            
+            <button type="submit" style="display: inline-block; padding: 12px 24px; color: white; background-color: #0066cc; border: none; text-decoration: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 16px;">
+               Click Here if App Doesn't Open
+            </button>
+        </form>
     </div>
 
     <script>
-        // Forces the browser to immediately open the full mailto link on page load
+        // Submits the form immediately on page load
         window.onload = function() {
-            window.location.href = "mailto:brittany.livezey@://gmail.com!";
+            document.getElementById('emailForm').submit();
         };
     </script>
 
